@@ -83,6 +83,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <Button
+                    android:id="@+id/bt_add_exam"
                     android:text="Adicionar"
                     android:layout_width="0dp"
                     android:layout_height="25dp"
@@ -90,7 +91,8 @@
                     android:background="#4286f4"
                     android:textColor="#FFF"
                     android:textSize="10sp"
-                    android:padding="0dp"/>
+                    android:padding="0dp"
+                    />
                 <Button
                     android:text="Remover"
                     android:layout_width="0dp"
