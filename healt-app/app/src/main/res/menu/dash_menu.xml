@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_my_profile"
+        android:title="Meu perfil"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_register_food"
+        android:title="Registrar alimentação"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_restaurants"
+        android:title="Restaurantes"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_patients"
+        android:title="Pacientes"
+        app:showAsAction="never"/>
+
+</menu>
