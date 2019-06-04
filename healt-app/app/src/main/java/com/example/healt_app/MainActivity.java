@@ -1,5 +1,6 @@
 package com.example.healt_app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -57,6 +58,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch(item.getItemId()) {
+            case R.id.menu_my_profile:
+                Intent i = new Intent(this, ProfileHomeActivity.class);
+                startActivity(i);
+                return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
 }
