@@ -104,6 +104,11 @@ public class HealthInfoActivity extends AppCompatActivity implements ExamAddDial
                     keep_exams.remove(p.intValue());
                 }
 
+                for (int i=0; i < lv_exams.getCount(); ++i) {
+                    View view = lv_exams.getChildAt(i);
+                    view.setBackgroundColor(Color.TRANSPARENT);
+                }
+
                 exams.clear();
                 exams.addAll(keep_exams);
                 selected_exams.clear();
