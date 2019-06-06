@@ -1,9 +1,11 @@
 package com.example.healt_app.com.example.healt_app.dialog;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -19,13 +21,14 @@ import com.example.healt_app.com.example.healt_app.fragments.DatePickerFragment;
 public class ExamAddDialog extends DialogFragment {
 
     private TextView tvDate;
+    private TextView tvName;
 
     public void setDate(DialogFragment fragment, int year, int month, int day) {
         tvDate.setText(day + "/" + month + "/" + year);
     }
 
     public interface ExamAddDialogListener {
-        public void onExamAddClick(DialogFragment dialog);
+        public void onExamAddClick(DialogFragment dialog, String date, String name);
     }
 
     ExamAddDialogListener listener;
@@ -52,6 +55,7 @@ public class ExamAddDialog extends DialogFragment {
         View v = inflater.inflate(R.layout.dialog_exam_add, null);
 
         tvDate = v.findViewById(R.id.tv_exam_date);
+        tvName = v.findViewById(R.id.tv_exam_name);
 
         Button btExamDate = v.findViewById(R.id.bt_exam_date);
         btExamDate.setOnClickListener(new View.OnClickListener() {
@@ -67,10 +71,23 @@ public class ExamAddDialog extends DialogFragment {
         .setPositiveButton("Adicionar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                listener.onExamAddClick(ExamAddDialog.this);
+                listener.onExamAddClick(ExamAddDialog.this, tvDate.getText().toString(), tvName.getText().toString());
             }
         });
 
         return builder.create();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == 10 && resultCode == Activity.RESULT_OK) {
+            // get date from string
+            String selectedDate = data.getStringExtra("selectedDate");
+            // set the value of the editText
+            tvDate.setText(selectedDate);
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

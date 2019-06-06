@@ -94,6 +94,7 @@
                     android:padding="0dp"
                     />
                 <Button
+                    android:id="@+id/bt_remove_exam"
                     android:text="Remover"
                     android:layout_width="0dp"
                     android:layout_height="25dp"

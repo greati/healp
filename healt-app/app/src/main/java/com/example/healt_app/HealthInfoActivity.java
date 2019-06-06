@@ -4,6 +4,8 @@ import android.graphics.Color;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.util.SparseBooleanArray;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.Adapter;
@@ -21,6 +23,12 @@ import java.util.ArrayList;
 
 public class HealthInfoActivity extends AppCompatActivity implements ExamAddDialog.ExamAddDialogListener {
 
+    ArrayList<String> exams = new ArrayList();
+    ListView lv_exams;
+    ArrayAdapter<String> exams_adapter;
+
+    ArrayList<Integer> selected_exams;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,14 +38,20 @@ public class HealthInfoActivity extends AppCompatActivity implements ExamAddDial
 
         ListView lv = findViewById(R.id.lv_queixas);
         lv.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-        ArrayList items = new ArrayList();
-        items.add("Dores de cabeça");
-        items.add("Tosse");
-        items.add("Espirros");
-        items.add("Enjoo");
-        ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
-        lv.setAdapter(adapter);
+        ArrayList hproblems = new ArrayList();
+        hproblems.add("Dores de cabeça");
+        hproblems.add("Tosse");
+        hproblems.add("Espirros");
+        hproblems.add("Enjoo");
+        ListAdapter hproblems_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, hproblems);
+        lv.setAdapter(hproblems_adapter);
 
+        selected_exams  = new ArrayList<>();
+
+        lv_exams = findViewById(R.id.lv_exams);
+        exams_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, exams);
+        lv_exams.setAdapter(exams_adapter);
+        lv_exams.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
@@ -67,11 +81,43 @@ public class HealthInfoActivity extends AppCompatActivity implements ExamAddDial
             }
         });
 
+        lv_exams.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                ListView lv = (ListView) parent;
+                lv.setItemChecked(position, true);
+                view.setBackgroundColor(Color.GRAY);
+                selected_exams.add(position);
+                return true;
+            }
+        });
+
+        Button btRemoveExam = findViewById(R.id.bt_remove_exam);
+        btRemoveExam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ArrayList<String> keep_exams = new ArrayList<>(exams);
+
+                for (Integer p : selected_exams) {
+                    Log.i("aaa", p.toString());
+                    keep_exams.remove(p.intValue());
+                }
+
+                exams.clear();
+                exams.addAll(keep_exams);
+                selected_exams.clear();
+
+                exams_adapter.notifyDataSetChanged();
+            }
+        });
+
     }
 
 
     @Override
-    public void onExamAddClick(DialogFragment dialog) {
-
+    public void onExamAddClick(DialogFragment dialog, String date, String name) {
+        exams.add(date + " - " + name);
+        exams_adapter.notifyDataSetChanged();
     }
 }
