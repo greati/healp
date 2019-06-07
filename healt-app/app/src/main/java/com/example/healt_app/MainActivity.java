@@ -60,10 +60,16 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch(item.getItemId()) {
-            case R.id.menu_my_profile:
+            case R.id.menu_my_profile: {
                 Intent i = new Intent(this, ProfileHomeActivity.class);
                 startActivity(i);
                 return true;
+            }
+            case R.id.menu_register_food: {
+                Intent i = new Intent(this, RegisterFoodImageActivity.class);
+                startActivity(i);
+                return true;
+            }
         }
 
         return super.onOptionsItemSelected(item);

@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.healt_app">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +15,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FoodInfoActivity"></activity>
+        <activity android:name=".RegisterFoodActivity"></activity>
+        <activity android:name=".RegisterFoodImageActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".FoodInfoActivity" />
         <activity android:name=".HealthInfoActivity" />
         <activity android:name=".PersonalInfoActivity" />
         <activity android:name=".ProfileHomeActivity" />
