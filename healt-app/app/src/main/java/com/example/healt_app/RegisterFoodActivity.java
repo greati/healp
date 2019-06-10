@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class RegisterFoodActivity extends AppCompatActivity implements FoodItemAddAdapter.FoodItemAddListener {
 
     ArrayList<FoodAddItem> items;
-    ArrayAdapter<FoodAddItem> itemsAdapter;
+    FoodItemAddAdapter itemsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class RegisterFoodActivity extends AppCompatActivity implements FoodItemA
         items.add(new FoodAddItem("oi", 239.0));
         items.add(new FoodAddItem("oi", 239.0));
         items.add(new FoodAddItem("oi", 239.0));
-        itemsAdapter = new ArrayAdapter<FoodAddItem>(this, R.layout.food_add_list_item, R.id.et_food_list_name, items);
+        itemsAdapter = new FoodItemAddAdapter(this, items);
         lvFoodAdd.setAdapter(itemsAdapter);
 
         ImageButton btAddFood = findViewById(R.id.bt_food_list_add);
@@ -51,6 +51,7 @@ public class RegisterFoodActivity extends AppCompatActivity implements FoodItemA
 
     @Override
     public void onRemoveItem(int pos) {
-
+        items.remove(pos);
+        itemsAdapter.notifyDataSetChanged();
     }
 }
