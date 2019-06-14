@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.healt_app.com.example.healt_app.fragments.PointsFragment;
+import com.example.healt_app.com.example.healt_app.fragments.RecommendsFragment;
 
 public class MainActivity extends AppCompatActivity {
     //private TextView mTextMessage;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.navigation_notifications:
                     //mTextMessage.setText(R.string.title_notifications);
+                    fragment = new RecommendsFragment();
                     break;
                 default:
                     fragment = null;
@@ -88,6 +90,11 @@ public class MainActivity extends AppCompatActivity {
             }
             case R.id.menu_register_food: {
                 Intent i = new Intent(this, RegisterFoodImageActivity.class);
+                startActivity(i);
+                return true;
+            }
+            case R.id.menu_patients: {
+                Intent i = new Intent(this, PatientChatActivity.class);
                 startActivity(i);
                 return true;
             }
