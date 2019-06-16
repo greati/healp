@@ -15,7 +15,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PatientProfileActivity"></activity>
+        <activity android:name=".CreateRecommActivity"
+            android:windowSoftInputMode="adjustPan"
+            ></activity>
+        <activity
+            android:name=".ChatActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".PatientProfileActivity" />
         <activity android:name=".PatientChatActivity" />
         <activity android:name=".RegisterFoodActivity" />
         <activity android:name=".RegisterFoodImageActivity">

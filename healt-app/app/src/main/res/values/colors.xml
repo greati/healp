@@ -3,4 +3,6 @@
     <color name="colorPrimary">#197000</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#4286f4</color>
+    <color name="colorBackChat">#d4ffcc</color>
+    <color name="colorBackChatNormal">#ddd</color>
 </resources>

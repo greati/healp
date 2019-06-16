@@ -55,7 +55,7 @@ public class RecommAdapter extends BaseAdapter {
         ImageView iv = convertView.findViewById(R.id.iv_recomm_icon);
         TextView tv = convertView.findViewById(R.id.tv_recomm_title);
 
-        tv.setText(r.getTitle());
+        tv.setText(r.toString());
 
         // check type
         iv.setImageResource(R.drawable.ic_user_md_solid);

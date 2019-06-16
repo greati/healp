@@ -17,6 +17,8 @@ import android.widget.TextView;
 import com.example.healt_app.com.example.healt_app.fragments.DashboardHomeFragment;
 import com.example.healt_app.com.example.healt_app.fragments.PointsFragment;
 import com.example.healt_app.com.example.healt_app.fragments.RecommendsFragment;
+import com.example.healt_app.com.example.healt_app.models.AuthData;
+import com.example.healt_app.com.example.healt_app.models.User;
 
 public class MainActivity extends AppCompatActivity {
     //private TextView mTextMessage;
@@ -61,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        AuthData.setLoggedUser(new User(1L));
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
         //mTextMessage = findViewById(R.id.message);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);

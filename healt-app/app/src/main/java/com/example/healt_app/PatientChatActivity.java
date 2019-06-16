@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.healt_app.com.example.healt_app.adapters.PatientChatAdapter;
 import com.example.healt_app.com.example.healt_app.models.Patient;
+import com.example.healt_app.com.example.healt_app.models.User;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -27,8 +28,8 @@ public class PatientChatActivity extends AppCompatActivity {
         ListView lvChat = findViewById(R.id.lv_patient_chat);
 
         patients = new ArrayList<Patient>();
-        patients.add(new Patient("Carlos", new Date(), R.drawable.ic_user_md_solid));
-        patients.add(new Patient("Pedro", new Date(), R.drawable.ic_user_md_solid));
+        patients.add(new Patient("Carlos", new Date(), R.drawable.ic_user_md_solid, new User(1L)));
+        patients.add(new Patient("Pedro", new Date(), R.drawable.ic_user_md_solid, new User(2L)));
 
         adapter = new PatientChatAdapter(this, patients);
         lvChat.setAdapter(adapter);

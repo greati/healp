@@ -114,6 +114,7 @@
         android:layout_height="wrap_content">
         
         <Button
+            android:id="@+id/bt_chat_patient"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -124,6 +125,7 @@
             android:drawablePadding="5dp"
             />
         <Button
+            android:id="@+id/bt_recomm_patient"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

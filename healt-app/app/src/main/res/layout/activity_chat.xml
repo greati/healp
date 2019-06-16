@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    tools:context=".ChatActivity">
+
+
+    <LinearLayout
+        android:id="@+id/ll_chat_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_patient_chat_img"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            app:srcCompat="@drawable/ic_user_md_solid"
+            />
+
+        <TextView
+            android:id="@+id/tv_patient_chat_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="Carlos"
+            android:textSize="18sp"
+            android:textColor="#000"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v_header_sep"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000000"
+        android:layout_below="@id/ll_chat_name"/>
+
+    <ListView
+        android:id="@+id/lv_chat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stackFromBottom="true"
+        android:layout_above="@id/ll_text_chat"
+        android:layout_below="@id/v_header_sep"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:transcriptMode="alwaysScroll"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        >
+    </ListView>
+
+    <View
+        android:id="@+id/v_chat_edit_sep"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000000"
+        android:layout_below="@id/lv_chat"/>
+
+    <LinearLayout
+        android:id="@+id/ll_text_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="10dp"
+        android:gravity="bottom">
+
+        <EditText
+            android:id="@+id/edt_chat_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            />
+        <Button
+            android:id="@+id/bt_chat_send"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
