@@ -135,5 +135,9 @@
             />
         
     </LinearLayout>
-    
+
+    <FrameLayout
+        android:id="@+id/frag_patient_charts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
 </LinearLayout>

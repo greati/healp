@@ -14,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.healt_app.com.example.healt_app.fragments.DashboardHomeFragment;
 import com.example.healt_app.com.example.healt_app.fragments.PointsFragment;
 import com.example.healt_app.com.example.healt_app.fragments.RecommendsFragment;
 
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     //mTextMessage.setText(R.string.title_home);
+                    fragment = new DashboardHomeFragment();
                     break;
                 case R.id.navigation_dashboard:
                     //mTextMessage.setText(R.string.title_dashboard);
@@ -67,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.dash_toolbar);
         setSupportActionBar(myToolbar);
+
+        final FragmentTransaction transaction = fragManager.beginTransaction();
+        transaction.replace(R.id.dash_fragment_holder, new DashboardHomeFragment()).commit();
 
         setTitle("Dashboard");
 
