@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FoodInfoActivity">
+    tools:context=".FoodInfoActivity"
+    android:background="@android:color/white">
 
-</android.support.constraint.ConstraintLayout>
+
+    <com.sysdata.widget.accordion.FancyAccordionView
+        android:id="@+id/acc_food_profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:descendantFocusability="beforeDescendants"
+        android:fadingEdgeLength="0dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical"
+        android:splitMotionEvents="false"
+        tools:listitem="@layout/food_collapse_item"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_add_sched_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/ic_add_black_24dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="16dp" />
+
+
+</RelativeLayout>

@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ProfileHomeActivity"
-    android:theme="@style/AppTheme">
+    android:theme="@style/AppTheme"
+    android:background="@android:color/white">
 
 
     <RelativeLayout
@@ -29,7 +30,8 @@
             android:layout_alignRight="@id/profile_avatar"
             android:layout_centerHorizontal="true"
             android:layout_alignBottom="@id/profile_avatar"
-            app:srcCompat="@android:drawable/ic_menu_add" />
+            app:srcCompat="@drawable/ic_edit_black_24dp"
+            />
 
     </RelativeLayout>
 

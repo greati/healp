@@ -14,11 +14,13 @@ buildscript {
     }
 }
 
+
 allprojects {
     repositories {
         google()
         jcenter()
-        
+        maven { url  'https://dl.bintray.com/sysdata/maven' }
+        maven { url 'https://jitpack.io' }
     }
 }
 
