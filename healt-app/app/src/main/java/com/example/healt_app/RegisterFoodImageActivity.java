@@ -6,12 +6,16 @@ import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.SurfaceHolder;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 
+import com.example.healt_app.com.example.healt_app.models.FoodAddItem;
 import com.example.healt_app.com.example.healt_app.surfaces.FoodCameraPreview;
+
+import java.util.ArrayList;
 
 public class RegisterFoodImageActivity extends AppCompatActivity {
 
@@ -32,6 +36,7 @@ public class RegisterFoodImageActivity extends AppCompatActivity {
         mPreview = new FoodCameraPreview(this, mCamera);
         FrameLayout preview = findViewById(R.id.fl_food_camera_preview);
         preview.addView(mPreview);
+        mCamera.setDisplayOrientation(90);
 
         btCapture = findViewById(R.id.bt_capture_food_image);
         btManual = findViewById(R.id.bt_manual_food);
@@ -39,7 +44,17 @@ public class RegisterFoodImageActivity extends AppCompatActivity {
         btCapture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ArrayList<FoodAddItem> itemsIntent = new ArrayList<FoodAddItem>();
+
+                itemsIntent.add(new FoodAddItem("Batata Frita", 239.0));
+                itemsIntent.add(new FoodAddItem("Arroz", 300.0));
+                itemsIntent.add(new FoodAddItem("Feijão", 350.0));
+                itemsIntent.add(new FoodAddItem("Carne", 100.0));
+
                 Intent i = new Intent(v.getContext(), RegisterFoodActivity.class);
+
+                i.putExtra("items", itemsIntent);
+
                 startActivity(i);
             }
         });
@@ -48,6 +63,9 @@ public class RegisterFoodImageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), RegisterFoodActivity.class);
+
+                i.putExtra("items", new ArrayList<FoodAddItem>());
+
                 startActivity(i);
             }
         });

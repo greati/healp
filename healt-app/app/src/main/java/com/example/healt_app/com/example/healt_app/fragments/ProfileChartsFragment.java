@@ -38,10 +38,12 @@ public class ProfileChartsFragment extends Fragment {
 
 
         AnyChartView pieChartToday = v.findViewById(R.id.acv_pie_chart_patient);
+        pieChartToday.setProgressBar(v.findViewById(R.id.progress_bar));
 
         APIlib.getInstance().setActiveAnyChartView(pieChartToday);
 
         Pie pie = AnyChart.pie();
+        pie.animation(true);
         List<DataEntry> pieTodayData = new ArrayList<>();
         pieTodayData.add(new ValueDataEntry("Cumpridas", 7));
         pieTodayData.add(new ValueDataEntry("A cumprir", 3));

@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="15dp"
-    android:scrollbars="vertical">
+    android:scrollbars="vertical"
+    android:background="@android:color/white">
 
     <TextView
         android:layout_width="match_parent"
@@ -73,7 +74,6 @@
         android:orientation="horizontal">
         <EditText
             android:id="@+id/tv_food_comp_new"
-            android:text="Nome"
             android:layout_weight="4"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />

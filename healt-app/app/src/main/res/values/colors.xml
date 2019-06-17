@@ -5,4 +5,8 @@
     <color name="colorAccent">#4286f4</color>
     <color name="colorBackChat">#d4ffcc</color>
     <color name="colorBackChatNormal">#ddd</color>
+    <color name="colorSecondary">#f4b342</color>
+    <color name="colorGolden">#f4c542</color>
+    <color name="colorPlate">#c9bfa5</color>
+    <color name="colorBronze">#a84534</color>
 </resources>

@@ -58,7 +58,18 @@ public class RecommAdapter extends BaseAdapter {
         tv.setText(r.toString());
 
         // check type
-        iv.setImageResource(R.drawable.ic_user_md_solid);
+        switch (r.getType()) {
+            case FOOD:
+                iv.setImageResource(R.drawable.ic_restaurant_menu_black_24dp);
+                break;
+            case WATER:
+                iv.setImageResource(R.drawable.icons8_water_96);
+                break;
+            case HEALTH:
+                iv.setImageResource(R.drawable.ic_user_md_solid);
+                break;
+        }
+
 
         return convertView;
 

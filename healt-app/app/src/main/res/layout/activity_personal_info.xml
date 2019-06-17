@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PersonalInfoActivity">
+    tools:context=".PersonalInfoActivity"
+    android:background="@android:color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,7 +32,8 @@
                     android:text="Nome"/>
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="Paula Santos"/>
             </LinearLayout>
 
             <LinearLayout
@@ -45,6 +47,7 @@
                     android:layout_height="wrap_content"
                     android:text="Idade"/>
                 <EditText
+                    android:text="23"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -62,7 +65,8 @@
                 android:text="Endereço"/>
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="Rua ABC, São Paulo, SP"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -70,7 +74,8 @@
                 android:text="Ocupação"/>
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="Estudante de Engenharia Elétrica"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -81,6 +86,7 @@
         android:layout_alignParentBottom="true">
 
         <Button
+            android:id="@+id/bt_update_profile"
             android:text="Atualizar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -88,6 +94,7 @@
             android:background="#197000"
             android:textColor="#FFF"/>
         <Button
+            android:id="@+id/bt_cancel"
             android:text="Cancelar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

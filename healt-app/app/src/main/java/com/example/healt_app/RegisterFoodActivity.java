@@ -1,9 +1,11 @@
 package com.example.healt_app;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
@@ -27,12 +29,13 @@ public class RegisterFoodActivity extends AppCompatActivity implements FoodItemA
 
         setTitle("Registrar alimentação");
 
+        Intent i = getIntent();
+        ArrayList<FoodAddItem> itemsIntent = (ArrayList<FoodAddItem>) i.getSerializableExtra("items");
+
         ListView lvFoodAdd = findViewById(R.id.lv_add_foods);
         items = new ArrayList();
-        items.add(new FoodAddItem("oi", 239.0));
-        items.add(new FoodAddItem("oi", 239.0));
-        items.add(new FoodAddItem("oi", 239.0));
-        items.add(new FoodAddItem("oi", 239.0));
+        items.addAll(itemsIntent);
+
         itemsAdapter = new FoodItemAddAdapter(this, items);
         lvFoodAdd.setAdapter(itemsAdapter);
 
@@ -45,6 +48,23 @@ public class RegisterFoodActivity extends AppCompatActivity implements FoodItemA
                 FoodAddItem fai = new FoodAddItem(tvNome.getText().toString(), Double.valueOf(tvQtd.getText().toString()));
                 items.add(fai);
                 itemsAdapter.notifyDataSetChanged();
+            }
+        });
+
+        Button btUpdate = findViewById(R.id.bt_update_food);
+
+        btUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        Button btCancel = findViewById(R.id.bt_cancel);
+        btCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

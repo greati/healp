@@ -1,6 +1,8 @@
 package com.example.healt_app.com.example.healt_app.models;
 
-public class FoodAddItem {
+import java.io.Serializable;
+
+public class FoodAddItem implements Serializable {
 
     private String name;
     private Double qtd;

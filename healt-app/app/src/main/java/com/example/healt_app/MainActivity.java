@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.dash_toolbar);
         setSupportActionBar(myToolbar);
+        myToolbar.setOverflowIcon(getResources().getDrawable(R.drawable.ic_more_vert_black_24dp));
 
         final FragmentTransaction transaction = fragManager.beginTransaction();
         transaction.replace(R.id.dash_fragment_holder, new DashboardHomeFragment()).commit();

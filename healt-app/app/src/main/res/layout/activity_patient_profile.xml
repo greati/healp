@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="15dp"
-    tools:context=".PatientProfileActivity">
+    tools:context=".PatientProfileActivity"
+    android:background="@android:color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +18,7 @@
             android:id="@+id/iv_profile_image"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            app:srcCompat="@drawable/ic_user_md_solid"
+            app:srcCompat="@drawable/carlos"
             android:layout_marginRight="15dp"
             />
 
@@ -71,7 +72,7 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        app:srcCompat="@drawable/ic_user_md_solid"
+                        app:srcCompat="@drawable/ic_restaurant_menu_black_24dp"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -91,7 +92,7 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        app:srcCompat="@drawable/ic_user_md_solid"
+                        app:srcCompat="@drawable/icons8_water_96"
                         />
                     <TextView
                         android:layout_width="wrap_content"

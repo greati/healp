@@ -23,7 +23,8 @@
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
     android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp">
+    android:layout_marginRight="16dp"
+    >
 
     <TextView
         android:id="@+id/sample_layout_collapsed_title"

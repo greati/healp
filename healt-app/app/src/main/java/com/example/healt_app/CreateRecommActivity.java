@@ -1,5 +1,6 @@
 package com.example.healt_app;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,10 +8,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.healt_app.com.example.healt_app.adapters.RecommAdapter;
+import com.example.healt_app.com.example.healt_app.models.Patient;
 import com.example.healt_app.com.example.healt_app.models.Recommendation;
 
 import java.util.ArrayList;
@@ -32,10 +36,18 @@ public class CreateRecommActivity extends AppCompatActivity {
 
         setTitle("Recomendações");
 
+        Intent i = getIntent();
+        Patient p = (Patient) i.getSerializableExtra("patient");
+
+        TextView tvNome = findViewById(R.id.tv_patient_chat_name);
+        tvNome.setText(p.getName());
+
+        ImageView iv = findViewById(R.id.iv_patient_chat_img);
+        iv.setImageResource(p.getImageId());
+
         lvRecomm = findViewById(R.id.lv_recomm_create);
 
         recomms = new ArrayList<>();
-        recomms.add(new Recommendation("Consumir #L de água", Recommendation.Type.WATER, 2D));
 
         recommAdapter = new RecommAdapter(this, recomms);
         lvRecomm.setAdapter(recommAdapter);
@@ -66,13 +78,31 @@ public class CreateRecommActivity extends AppCompatActivity {
 
                 Recommendation r = (Recommendation) spRecommType.getSelectedItem();
 
-                r.setQtd(qtd);
+                Recommendation r1 = new Recommendation(r.getTitle(), r.getType(), r.getQtd());
 
-                recomms.add(r);
+                r1.setQtd(qtd);
+
+                recomms.add(r1);
                 recommAdapter.notifyDataSetChanged();
 
                 edtRecommQtd.setText("");
 
+            }
+        });
+
+        Button btUpdate = findViewById(R.id.bt_update);
+        btUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        Button btCancel = findViewById(R.id.bt_cancel);
+        btCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

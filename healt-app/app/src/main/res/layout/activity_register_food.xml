@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterFoodActivity">
+    tools:context=".RegisterFoodActivity"
+    android:background="@android:color/white">
 
 
     <LinearLayout
@@ -13,19 +14,24 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="5dp"
+        android:layout_alignParentTop="true"
         >
 
         <TextView
             android:text="Nome"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="16sp"
             android:layout_weight="3"/>
 
         <TextView
-            android:text="Quantidade"
+            android:text="Quantidade (g)"
             android:id="@+id/et_food_list_qtd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="16sp"
             android:layout_weight="3"/>
 
     </LinearLayout>
@@ -34,6 +40,7 @@
         android:id="@+id/lv_add_foods"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/ll_header_add_food"
         android:layout_marginTop="20dp">
     </ListView>
 
@@ -69,7 +76,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                tools:src="@android:drawable/ic_menu_add" />
+                android:backgroundTint="@color/colorAccent"
+                android:src="@drawable/ic_add_black_24dp" />
 
         </LinearLayout>
 
@@ -81,6 +89,7 @@
             android:layout_alignParentBottom="true">
 
             <Button
+                android:id="@+id/bt_update_food"
                 android:text="Atualizar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -88,6 +97,7 @@
                 android:background="#197000"
                 android:textColor="#FFF"/>
             <Button
+                android:id="@+id/bt_cancel"
                 android:text="Cancelar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

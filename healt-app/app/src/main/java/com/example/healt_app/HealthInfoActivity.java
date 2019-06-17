@@ -48,6 +48,9 @@ public class HealthInfoActivity extends AppCompatActivity implements ExamAddDial
 
         selected_exams  = new ArrayList<>();
 
+        exams.add("10/10/2018 - Exame de sangue");
+        exams.add("10/12/2018 - Exame de urina");
+
         lv_exams = findViewById(R.id.lv_exams);
         exams_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, exams);
         lv_exams.setAdapter(exams_adapter);
@@ -114,6 +117,23 @@ public class HealthInfoActivity extends AppCompatActivity implements ExamAddDial
                 selected_exams.clear();
 
                 exams_adapter.notifyDataSetChanged();
+            }
+        });
+
+        Button btUpdateProfile = findViewById(R.id.bt_update_profile);
+
+        btUpdateProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        Button btCancel = findViewById(R.id.bt_cancel);
+        btCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
 

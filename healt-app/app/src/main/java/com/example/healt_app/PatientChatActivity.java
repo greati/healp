@@ -28,8 +28,8 @@ public class PatientChatActivity extends AppCompatActivity {
         ListView lvChat = findViewById(R.id.lv_patient_chat);
 
         patients = new ArrayList<Patient>();
-        patients.add(new Patient("Carlos", new Date(), R.drawable.ic_user_md_solid, new User(1L)));
-        patients.add(new Patient("Pedro", new Date(), R.drawable.ic_user_md_solid, new User(2L)));
+        patients.add(new Patient("Carlos", new Date(), R.drawable.carlos, new User(1L)));
+        patients.add(new Patient("Pedro", new Date(), R.drawable.pedro, new User(2L)));
 
         adapter = new PatientChatAdapter(this, patients);
         lvChat.setAdapter(adapter);

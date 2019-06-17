@@ -29,8 +29,10 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".FoodInfoActivity" />
-        <activity android:name=".HealthInfoActivity" />
+        <activity android:name=".FoodInfoActivity"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".HealthInfoActivity"
+            android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".PersonalInfoActivity" />
         <activity android:name=".ProfileHomeActivity" />
         <activity

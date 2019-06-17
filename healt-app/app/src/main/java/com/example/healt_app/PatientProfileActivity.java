@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.healt_app.com.example.healt_app.fragments.ProfileChartsFragment;
@@ -29,7 +30,7 @@ public class PatientProfileActivity extends AppCompatActivity {
 
         p = (Patient) i.getSerializableExtra("patient");
 
-        setTitle(p.getName());
+        setTitle("Perfil do paciente");
 
         TextView tvNome = findViewById(R.id.tv_profile_name);
         tvNome.setText(p.getName());
@@ -58,6 +59,9 @@ public class PatientProfileActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        ImageView ivProfile = findViewById(R.id.iv_profile_image);
+        ivProfile.setImageResource(p.getImageId());
 
     }
 }
